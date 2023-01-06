@@ -1,0 +1,10 @@
+{
+    "SERVER_PORT": 3000,
+    "ELASTICSEARCH_NODE": "https://localhost:9200",
+    "ELASTICSEARCH_CA_FILE": "./http_ca.crt",
+    "ELASTICSEARCH_USER": "elastic",
+    "ELASTICSEARCH_PASSWORD": "AEQ9iQTPVXLe0FjKct2d",
+    "ELASTICSEARCH_REQUEST_TIMEOUT": 5000,
+    "ELASTICSEARCH_SIZE_LIMIT": 100,
+    "ADVERTISEMENT_INDEX": "advertisement_index"
+}

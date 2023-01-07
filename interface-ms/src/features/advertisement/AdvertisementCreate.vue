@@ -15,12 +15,15 @@
                 <button @click.prevent="submit()">Save</button>
             </div>
         </form>
+        <div v-if="message">
+            {{message}}
+        </div>
   </div>
 </template>
 
 <script>
 import {required} from 'vuelidate/lib/validators'
-import { mapActions } from 'vuex'
+import { mapActions , mapGetters } from 'vuex'
 export default {
     data() {
         return {
@@ -31,7 +34,7 @@ export default {
     },
 
     methods: {
-        submit() {
+        async submit() {
             this.$v.form.$touch();
             
             if (this.$v.form.$invalid) {
@@ -39,11 +42,14 @@ export default {
                 return;
             }
 
-            this.createAdvertisement(this.form)
+            await this.createAdvertisement(this.form)
 
             // reset form
             this.form = this.initForm();
             this.isFormSubmitted = false
+            setTimeout(()=>{
+                this.setMessage(null);
+            }, 4000);
 
         },
         initForm() {
@@ -120,7 +126,10 @@ export default {
                 },
             ]
         },
-        ...mapActions('advertisement', ['createAdvertisement'])
+        ...mapActions('advertisement', ['createAdvertisement', 'setMessage'])
+    },
+    computed: {
+        ...mapGetters('advertisement', ['message'])
     },
     validations: {
         form: {

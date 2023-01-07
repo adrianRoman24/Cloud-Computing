@@ -6,7 +6,7 @@ module.exports = (app, esClient) => {
     router.get("/advertisement", async (req, res) => {
         try {
             const result = await advertisementCtrl.get(req, esClient);
-            logger.info("GET OK");
+            logger.info("GET OK ", result);
             res.send(result);
         } catch (error) {
             logger.error(error);
@@ -17,7 +17,7 @@ module.exports = (app, esClient) => {
     router.post("/advertisement", async (req, res) => {
         try {
             const result = await advertisementCtrl.create(req, esClient);
-            logger.info("POST OK");
+            logger.info("POST OK ", result);
             res.send(result);
         } catch (error) {
             logger.error(error);

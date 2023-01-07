@@ -37,5 +37,5 @@ exports.get = async(req, esClient) => {
             },
         },
     });
-    return result.hits.hits;
+    return result.hits.hits.map((elem) => { return elem._source });
 };

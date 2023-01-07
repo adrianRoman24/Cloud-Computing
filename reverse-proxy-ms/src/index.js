@@ -14,11 +14,11 @@ const app = express();
         try {
             const result = await axios({
                 method: "GET",
-                url: config.ADVERTISEMENT_MS_URL,
+                url: `${config.ADVERTISEMENT_MS_URL}/advertisement`,
                 data: req.body,
             });
-            logger.info("GET OK");
-            res.send(result);
+            logger.info("GET OK ", result.data);
+            res.send(result.data);
         } catch (error) {
             logger.error(error);
             res.sendStatus(400);
@@ -29,11 +29,11 @@ const app = express();
         try {
             const result = await axios({
                 method: "POST",
-                url: config.ADVERTISEMENT_MS_URL,
+                url: `${config.ADVERTISEMENT_MS_URL}/advertisement`,
                 data: req.body,
             });
-            logger.info("POST OK");
-            res.send(result);
+            logger.info("POST OK ", result.data);
+            res.send(result.data);
         } catch (error) {
             logger.error(error);
             res.sendStatus(400);

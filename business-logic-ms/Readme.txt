@@ -4,4 +4,4 @@
 docker build -f Dockerfile . -t business-logic-ms
 
 3. Run docker container
-docker run --name business-logic-ms-container -d -p 3001:3001 business-logic-ms
+docker run --name business-logic-ms-container -d -p 3000:3000 business-logic-ms

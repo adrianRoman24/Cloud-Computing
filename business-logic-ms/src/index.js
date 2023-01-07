@@ -1,10 +1,15 @@
+const config = require("../config/config.json");
+// set env variables
+Object.keys(config).forEach((key) => {
+    config[key] = process.env[key] || config[key];
+});
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const { Client } = require('@elastic/elasticsearch');
 const fs = require("fs");
 
 const { logger } = require("./utils");
-const config = require("../config/config.json");
 logger.info(config);
 
 const app = express();

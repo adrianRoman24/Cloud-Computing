@@ -2,6 +2,11 @@ const config = require("../config/config.json");
 const md5 = require("md5");
 
 const allowedFields = ["mileage", "make", "model", "fuel", "gear", "offerType", "price", "hp", "year", "phone", "name"];
+const numericFields = ["mileage", "price", "hp", "year"];
+
+const processQueryParams = (params) => {
+
+}
 
 exports.create = async(req, esClient) => {
     const requestedFields = Object.keys(req.body);
@@ -19,7 +24,7 @@ exports.create = async(req, esClient) => {
 
 exports.get = async(req, esClient) => {
     const requestedFields = Object.keys(req.body);
-    if (!requestedFields.every(field => allowedFields.includes(field))) {
+    if (!requestedFields.every(field => [...allowedFields, "id"].includes(field))) {
         throw Error("Wrong fields", requestedFields);
     }
     const must = [];

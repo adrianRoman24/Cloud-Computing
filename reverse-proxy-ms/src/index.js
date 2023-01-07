@@ -11,13 +11,14 @@ const app = express();
     app.use(bodyParser.json());
 
     app.get("/advertisement", async (req, res) => {
+        console.log(req.query)
         try {
             const result = await axios({
                 method: "GET",
                 url: `${config.ADVERTISEMENT_MS_URL}/advertisement`,
-                data: req.body,
+                data: req.query,
             });
-            logger.info("GET OK ", result.data);
+            logger.info("GET OK ");
             res.send(result.data);
         } catch (error) {
             logger.error(error);
@@ -32,7 +33,7 @@ const app = express();
                 url: `${config.ADVERTISEMENT_MS_URL}/advertisement`,
                 data: req.body,
             });
-            logger.info("POST OK ", result.data);
+            logger.info("POST OK ");
             res.send(result.data);
         } catch (error) {
             logger.error(error);

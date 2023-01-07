@@ -1,0 +1,1 @@
+docker run -d -e ELASTIC_PASSWORD=elastic-password --name es-container --net elastic -p 9200:9200 -it docker.elastic.co/elasticsearch/elasticsearch:8.5.3

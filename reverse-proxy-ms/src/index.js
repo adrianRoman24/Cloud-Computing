@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const axios = require("axios");
 const config = require("../config/config.json");
 
-const { logger } = require("../../business-logic-ms/src/utils");
+const { logger } = require("./utils");
 
 const app = express();
 

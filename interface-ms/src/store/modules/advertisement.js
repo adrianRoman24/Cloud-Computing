@@ -19,8 +19,7 @@ export const actions = {
             const response = await AdvertisementService.getAllAdvertisements(payload);
             // const response = AdvertisementService.getAllAdvertisements(payload);
 
-            console.log(response)
-            commit('SET_ADVERTISEMENTS', response);
+            commit('SET_ADVERTISEMENTS', response.data);
         } catch (error) {
             console.log(error)
         }

@@ -6,6 +6,7 @@ Object.keys(config).forEach((key) => {
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
+const cors = require('cors');
 
 const { logger } = require("./utils");
 
@@ -13,9 +14,11 @@ const app = express();
 
 (async () => {
     app.use(bodyParser.json());
+    app.use(cors({
+        origin: 'http://172.28.69.57:8080'
+    }));
 
     app.get("/advertisement", async (req, res) => {
-        console.log(req.query)
         try {
             const result = await axios({
                 method: "GET",

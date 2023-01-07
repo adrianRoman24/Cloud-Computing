@@ -2,7 +2,7 @@ import axios from 'axios';
 import FilterService from '@/services/filter.js'
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:3001/',
+    baseURL: 'http://172.28.69.57:3001/',
 });
 
 apiClient.interceptors.request.use((config) => {
@@ -18,11 +18,7 @@ const getAllAdvertisements = (payload) => {
 
     url = FilterService.addFiltersToURL(url, payload);
 
-    console.log(url)
-
-    // TODO 
     return apiClient.get(url);
-    //return getAdvertisementsMocks;
 };
 
 const createAdvertisement = (payload) => {

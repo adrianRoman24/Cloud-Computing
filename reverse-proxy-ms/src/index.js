@@ -1,7 +1,11 @@
+const config = require("../config/config.json");
+Object.keys(config).forEach((key) => {
+    config[key] = process.env[key] || config[key];
+});
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
-const config = require("../config/config.json");
 
 const { logger } = require("./utils");
 

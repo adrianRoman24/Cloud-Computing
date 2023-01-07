@@ -2,7 +2,7 @@ import axios from 'axios';
 import FilterService from '@/services/filter.js'
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:8000/',
+    baseURL: 'http://localhost:3001/',
 });
 
 apiClient.interceptors.request.use((config) => {

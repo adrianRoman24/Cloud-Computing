@@ -11,8 +11,9 @@
                     </p>
                 </div>
             </div>
-
-            <button @click.prevent="submit()">Save</button>
+            <div class="form-button">
+                <button @click.prevent="submit()">Save</button>
+            </div>
         </form>
   </div>
 </template>
@@ -174,6 +175,24 @@ input {
     &:focus {
         outline: 0;
         border-bottom: 1px solid $color-primary;
+    }
+}
+
+.form-title {
+    font-size: 25px;
+}
+
+.form-button {
+    margin: 20px auto;
+    padding: 10px 20px;
+    color: white;
+    background: $color-primary;
+    border: none;
+    border-radius: 4px;
+
+    &-section {
+        display: flex;
+        justify-content: center;
     }
 }
 </style>

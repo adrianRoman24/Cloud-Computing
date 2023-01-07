@@ -21,8 +21,8 @@ const getAllAdvertisements = (payload) => {
     console.log(url)
 
     // TODO 
-    // return apiClient.get(url);
-    return getAdvertisementsMocks;
+    return apiClient.get(url);
+    //return getAdvertisementsMocks;
 };
 
 const createAdvertisement = (payload) => {
@@ -48,8 +48,8 @@ const getAdvertisementsMocks = [
             "price": "6800",
             "hp": "116",
             "year": "2011",
-            name: 'Bianca',
-            phone: '+40763690217'
+            "name": 'Bianca',
+            "phone": '+40763690217'
         },
         {
             id: 2,

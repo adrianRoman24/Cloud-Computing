@@ -16,8 +16,8 @@ export const actions = {
     async getAllAdvertisements({commit}, payload) {
         try {
             // TODO 
-            // const response = await AdvertisementService.getAllAdvertisements(payload);
-            const response = AdvertisementService.getAllAdvertisements(payload);
+            const response = await AdvertisementService.getAllAdvertisements(payload);
+            // const response = AdvertisementService.getAllAdvertisements(payload);
 
             console.log(response)
             commit('SET_ADVERTISEMENTS', response);

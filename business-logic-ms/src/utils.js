@@ -30,4 +30,9 @@ const logger = {
     },
 }
 
+const sleep = async (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 module.exports.logger = logger;
+module.exports.sleep = sleep;

@@ -1,6 +1,6 @@
 {
     "SERVER_PORT": 3000,
-    "ELASTICSEARCH_NODE": "https://172.28.69.57:9200",
+    "ELASTICSEARCH_NODE": "https://172.27.100.1:9200",
     "ELASTICSEARCH_CA_FILE": "./http_ca.crt",
     "ELASTICSEARCH_USER": "elastic",
     "ELASTICSEARCH_PASSWORD": "elastic-password",

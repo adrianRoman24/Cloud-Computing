@@ -1,0 +1,27 @@
+# Create cluster
+kind create cluster --name cc-cluster --config kind-cluster-config.yaml
+
+# Init terraform.tfvars from the output of the following command:
+kubectl config view --minify --flatten --context=kind-cc-cluster
+
+# Run:
+1. terraform init
+2. terraform plan
+3. terraform apply
+
+# View resources:
+1. kubectl -n cloud-computing get pods
+2. kubectl -n cloud-computing get deploy
+3. kubectl -n cloud-computing get svc
+4. kubectl -n cloud-computing logs <pod-name>
+
+# Access app at http://localhost:30007/advertisement
+
+# Destroy resources
+terraform destroy
+
+# Delete cluster 
+kind delete cluster --name cc-cluster
+
+# For elastic search bug on wsl run:
+sudo sysctl -w vm.max_map_count=262144
